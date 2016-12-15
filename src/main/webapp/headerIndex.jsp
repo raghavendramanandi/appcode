@@ -18,7 +18,7 @@ z-index: -100;
 transform: translateX(-50%) translateY(-50%);
 background: url('img/ikk.png') no-repeat; background-size: cover;  -webkit-transition: 1s opacity; transition: 1s opacity; }
 div.topdiv { font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;   
-font-weight: 100; background: rgba(0,0,0,0.3); color: white; padding: 2rem; width: 33%; margin: 2rem; float: right; margin: 170px 30px 170px 10px; font-size: 1.2rem; }
+font-weight: 100; background: rgba(0,0,0,0.3); color: white; padding: 2rem; width: 33%; margin: 2rem; float: right; margin: 0px 30px 0px 10px; font-size: 1.2rem; }
 h1 { font-size: 3rem; text-transform: uppercase; margin-top: 0; letter-spacing: .3rem; }
 a { display: inline-block; color: #fff; text-decoration: none; background: rgba(0,0,0,0.5); 
 padding: .5rem; -webkit-transition: .6s background; transition: .6s background; }

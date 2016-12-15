@@ -82,10 +82,16 @@
     </header>
     -->
     
-	<jsp:include page="headerIndex.jsp" />
+    
+    
+    <section>
+    	<div class="container">
+    		<jsp:include page="headerIndex.jsp" />
+    	</div>
+    </section>
     
     <!-- Services Section -->
-    <section id="services">
+    <section id="services" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
