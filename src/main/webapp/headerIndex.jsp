@@ -16,9 +16,9 @@ z-index: -100;
 -ms-transform: translateX(-50%) translateY(-50%);
 -webkit-transform: translateX(-50%) translateY(-50%);
 transform: translateX(-50%) translateY(-50%);
-background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg') no-repeat; background-size: cover;  -webkit-transition: 1s opacity; transition: 1s opacity; }
+background: url('img/ikk.png') no-repeat; background-size: cover;  -webkit-transition: 1s opacity; transition: 1s opacity; }
 div.topdiv { font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;   
-font-weight: 100; background: rgba(0,0,0,0.3); color: white; padding: 2rem; width: 33%; margin: 2rem; float: right; margin: 100px 30px 10px 10px; font-size: 1.2rem; }
+font-weight: 100; background: rgba(0,0,0,0.3); color: white; padding: 2rem; width: 33%; margin: 2rem; float: right; margin: 170px 30px 170px 10px; font-size: 1.2rem; }
 h1 { font-size: 3rem; text-transform: uppercase; margin-top: 0; letter-spacing: .3rem; }
 a { display: inline-block; color: #fff; text-decoration: none; background: rgba(0,0,0,0.5); 
 padding: .5rem; -webkit-transition: .6s background; transition: .6s background; }
@@ -46,7 +46,7 @@ a:hover { background: rgba(0,0,0,0.9); }
   div{width:70%;} 
 }
 @media all and (max-device-width: 800px) {
-  body { background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg") #000 no-repeat center center fixed; background-size: cover; }
+  body { background: url("img/ikk.png") #000 no-repeat center center fixed; background-size: cover; }
   #bgvid, #polina button { display: none; }
   div{width:70%;} 
 }
@@ -54,13 +54,13 @@ a:hover { background: rgba(0,0,0,0.9); }
 <meta charset="utf-8">
 </head>
 <body>
-<video autoplay="autoplay" loop="" poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" class="stopfade">
+<video autoplay="autoplay" loop="" poster="img/ikk.png" id="bgvid" class="stopfade">
 <source src="headerIndex/polina.webm" type="video/webm">
 <source src="headerIndex/polina.mp4" type="video/mp4">
 </video> 
 <div id="polina" class="topdiv">
 <h1>the ikk</h1>
-<p>A new dimension in connecting
+<p>A new dimension in connectivity
 </p><p><a href="http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video">Buy ikk</a>
 </p>
 <p>ikk is a button, Not just any button, It's a connected button. Just a push of ikk can do stuffs for you.</p>
