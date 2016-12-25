@@ -23,6 +23,9 @@
 
     <!-- Theme CSS -->
     <link href="css/agency.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> 
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,10 +56,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#services">Ikks</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="#portfolio">Pricing</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#about">About</a>
@@ -95,7 +98,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Services</h2>
+                    <h2 class="section-heading">Ikks</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
@@ -105,8 +108,8 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-bicycle fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">ikk <h3>Blue</h3></h4>
-                    <p class="text-muted">Blue is our simplest offering. It does all the things an ikk can do. Just pair it with your phone, You are ready.</p>
+                    <h4 class="service-heading">ikk </br> <span style="font-family: 'Pacifico', cursive; font-size: 29px;">Alpha</span></h4>
+                    <p class="text-muted">Alpha is our simplest offering. It does all the things an ikk can do. Just pair it with your phone, You are ready.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -114,16 +117,16 @@
                         <!--<i class="fa fa-laptop fa-stack-1x fa-inverse"></i> -->
                         <i class="fa fa-motorcycle fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">ikk <h3></>S</h3></h4>
-                    <p class="text-muted">Super ikk is our best offering. It's independent, It's reliable and it's truly ikk</p>
+                    <h4 class="service-heading">ikk </br> <span style="font-size: 29px;"></>S</span></h4>
+                    <p class="text-muted">Super ikk is our best offering. It's independent, It's reliable and it's truly ikk. It's wifi based. You can use your ikk in home and office.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-car fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">ikk <h3>Mega</h3></h4>
-                    <p class="text-muted">ikk Mega is the robust ikk. It uses GSM technology, Which makes it work even in the places where there is no internet. </p>
+                    <h4 class="service-heading">ikk <br><span style="font-family: 'Lobster', cursive; font-size: 29px;">Aero</span></h4>
+                    <p class="text-muted">ikk Aero is the robust ikk. It uses GSM technology, Which makes it work even in the places where there is no internet. </p>
                 </div>
             </div>
         </div>
@@ -134,7 +137,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
+                    <h2 class="section-heading">Pricing</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
