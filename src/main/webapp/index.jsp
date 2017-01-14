@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>The ikk</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,22 +33,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script>
-	function sendMessage(){	    
-       $.post("/ikk/message",
-       {
-         name: document.getElementById("name"),
-         email: document.getElementById("email"),
-         phone: document.getElementById("phone"),
-         message: document.getElementById("messgae")
-       },
-       function(data,status){
-           alert("Thanks for the contacting us, we'll get back to you at the earlist");
-       });
-	}
-	</script>
 
 </head>
 
@@ -134,7 +118,7 @@
                         <i class="fa fa-motorcycle fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">ikk </br> <span style="font-size: 29px;"></>S</span></h4>
-                    <p class="text-muted">Super ikk is our best offering. It's independent, It's reliable and it's truly ikk. It's wifi based. You can use your ikk in home and office.</p>
+                    <p class="text-muted">Super ikk is our best offering. It's independent, It's reliable and it's truly ikk. It's wifi based. Its flexible, You can use your ikk in home and office.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -142,7 +126,7 @@
                         <i class="fa fa-car fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">ikk <br><span style="font-family: 'Lobster', cursive; font-size: 29px;">Aero</span></h4>
-                    <p class="text-muted">ikk Aero is the robust ikk. It uses GSM technology, Which makes it work even in the places where there is no internet. </p>
+                    <p class="text-muted">ikk Aero is the robust ikk. It uses GSM technology, It's one of the safest networks to work with. You can use your ikk even in the places where there is no internet. </p>
                 </div>
             </div>
         </div>
@@ -264,11 +248,10 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
+                                    <h4 class="subheading">Distributed Architecture</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                    <p class="text-muted">Our distributed architecture enables you to connect your existing system to us. So that you can use full potential of ikk in your business. Configureing your existing system with us will not take more than 5 min!</p>
                                 </div>
                             </div>
                         </li>
@@ -278,11 +261,10 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
+                                    <h4 class="subheading">Trigger Actions</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                    <p class="text-muted">System is designed for a modular platform. this enables attaching any module easy and fecilates seamles sintegration. Every ikk can be configured to a default set of actions. These actions are associate to each of the modules. These trigger an SMS, IVR, Recharge, etc..</p>
                                 </div>
                             </div>
                         </li>
@@ -292,28 +274,26 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
+                                    <h4 class="subheading">Security</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                    <p class="text-muted">Security is one of the challanging aspects of any distributed system. this is even more pronounced in an IoT echosystem. To address this problem we have built a in house security system that allows for a secure usage if ikk. contact us to know more..</p>
                                 </div>
                             </div>
                         </li>
-                        <li class="timeline-inverted">
+                        <!--<li class="timeline-inverted">
                             <div class="timeline-image">
                                 <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
+                                    <h4 class="subheading">Security</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                    <p class="text-muted">Security is one of the challanging aspects of any distributed system. this is even more pronounced in an IoT echosystem. To address this problem we have built a in house security system that allows for a secure usage if ikk. contact us to know more..</p>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <h4>Be Part

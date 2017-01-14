@@ -26,7 +26,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "http://localhost:8080/springjpaexample/ikk/message",
+                url: "/ikk/message",
                 type: "POST",
                 datatype : "application/json",
                 contentType: "application/json",
