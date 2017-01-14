@@ -1,7 +1,6 @@
 package com.howtodoinjava.demo.dao;
 
 import java.util.List;
-
 import com.howtodoinjava.demo.model.DepartmentEntity;
 import com.howtodoinjava.demo.model.EmployeeEntity;
 
