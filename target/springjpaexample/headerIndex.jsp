@@ -61,7 +61,6 @@ a:hover { background: rgba(0,0,0,0.9); }
 <div id="polina" class="topdiv">
 <h1>the ikk</h1>
 <p>A new dimension in connectivity
-</p><p><a href="http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video">Buy ikk</a>
 </p>
 <p>ikk is a button, Not just any button, It's a connected button. Just a push of ikk can do stuffs for you.</p>
 <p>Often we come across situation where in we feel or even wish we had a button to do things for us, ikk is just such button.</p>
