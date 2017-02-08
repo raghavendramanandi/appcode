@@ -54,7 +54,7 @@ public class EmployeeController
 	 * Bind all departments
 	 * */
 	@ModelAttribute("allDepartments")
-    public List<DepartmentEntity> populateDepartments() 
+    public List<DepartmentEntity> populateDepartments()
     {
         List<DepartmentEntity> departments = manager.getAllDepartments();
         return departments;

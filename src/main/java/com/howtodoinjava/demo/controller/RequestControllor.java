@@ -24,28 +24,44 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.howtodoinjava.demo.editors.DepartmentEditor;
 import com.howtodoinjava.demo.model.DepartmentEntity;
 import com.howtodoinjava.demo.model.EmployeeEntity;
 import com.howtodoinjava.demo.model.GResponse;
 import com.howtodoinjava.demo.model.Message;
 import com.howtodoinjava.demo.service.EmployeeManager;
+import com.howtodoinjava.demo.service.MessagesService;
+import com.ikk.response.ClickResponse;
 import com.ikk.response.Response;
 import com.ikk.response.SuccessResponse;
+import com.ikk.response.SuccessfulClickResponse;
 
 @RestController
 @RequestMapping("/ikk")
 public class RequestControllor
 {
 
+	@Autowired
+	MessagesService ms;
+	ObjectMapper mapper = new ObjectMapper();
+	
 	public RequestControllor() {
 		// TODO Auto-generated constructor stub
+		this.mapper = new ObjectMapper();
 	}
 	
 	@RequestMapping(value = "/Ganapa")
 	public String Ganapa() {
 		//return new GResponse("Ganapa").getResponse();
 		return "Ganapa";
+	}
+	
+	@RequestMapping(value = "/apple")
+	public String Apple() {
+		//return new GResponse("Ganapa").getResponse();
+		return "{\"code\":\"200\",\"message\":\"Success\"}";
 	}
 	
 	@RequestMapping(value = "/success", headers="Accept=*/*",  produces="application/json")
@@ -56,5 +72,21 @@ public class RequestControllor
 	@RequestMapping(value = "/message", headers="Accept=*/*",  produces="application/json", method = RequestMethod.POST)
 	public void getMessage( @RequestBody Message message){
 		System.out.println(message.toString());
+		ms.addMessage(message);
+	}
+	
+	@RequestMapping(value = "/click")
+	public String Action(){
+		try {
+			SuccessResponse response = new SuccessResponse();
+			System.out.println(response.toString());
+			return mapper.writeValueAsString(response);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "i a catch";
+		}
+		finally {
+			System.out.println("I am finally");
+		}
 	}
 }
