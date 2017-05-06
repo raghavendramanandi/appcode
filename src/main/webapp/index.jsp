@@ -244,7 +244,7 @@
                     <ul class="timeline">
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                                <img class="img-circle-about img-responsive" src="img/about/1.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -257,27 +257,27 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
+                                <img class="img-circle-about img-responsive" src="img/about/2.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4 class="subheading">Trigger Actions</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">System is designed for a modular platform. this enables attaching any module easy and fecilates seamles sintegration. Every ikk can be configured to a default set of actions. These actions are associate to each of the modules. These trigger an SMS, IVR, Recharge, etc..</p>
+                                    <p class="text-muted">System is designed for a modular platform. this enables attaching any module easy and facilitates seamless integration. Every ikk can be configured to a default set of actions. These actions are associate to each of the modules. These trigger an SMS, IVR, Recharge, etc..</p>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
+                                <img class="img-circle-about img-responsive" src="img/about/3.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4 class="subheading">Security</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Security is one of the challanging aspects of any distributed system. this is even more pronounced in an IoT echosystem. To address this problem we have built a in house security system that allows for a secure usage if ikk. contact us to know more..</p>
+                                    <p class="text-muted">Security is one of the challenging aspects of any distributed system. this is even more pronounced in an IoT ecosystem. To address this problem we have built a in house security system that allows for a secure usage if ikk. contact us to know more..</p>
                                 </div>
                             </div>
                         </li>
@@ -290,7 +290,7 @@
                                     <h4 class="subheading">Security</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Security is one of the challanging aspects of any distributed system. this is even more pronounced in an IoT echosystem. To address this problem we have built a in house security system that allows for a secure usage if ikk. contact us to know more..</p>
+                                    <p class="text-muted">Security is one of the challenging aspects of any distributed system. this is even more pronounced in an IoT ecosystem. To address this problem we have built a in house security system that allows for a secure usage if ikk. contact us to know more..</p>
                                 </div>
                             </div>
                         </li> -->

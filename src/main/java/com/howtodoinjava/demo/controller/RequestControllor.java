@@ -1,5 +1,6 @@
 package com.howtodoinjava.demo.controller;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
@@ -89,4 +90,64 @@ public class RequestControllor
 			System.out.println("I am finally");
 		}
 	}
+	
+	@RequestMapping(value = "/apple1")
+	public String ActionForApple(){
+		try {
+			DummyResponse response = new DummyResponse();
+			System.out.println(response.toString());
+			return mapper.writeValueAsString(response);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "i a catch";
+		}
+		finally {
+			System.out.println("I am finally");
+		}
+	}
 }
+
+class DummyResponse implements Serializable{
+	
+	private String mode = "1";
+	private String code = "101001010101";
+	private String status = "success";
+	
+	DummyResponse(){
+		mode = "1";
+		code = "101001010101";
+		status = "success";
+	}
+
+	public String getMode() {
+		return mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "DummyResponse [mode=" + mode + ", code=" + code + ", status=" + status + "]";
+	}
+	
+	
+}
+

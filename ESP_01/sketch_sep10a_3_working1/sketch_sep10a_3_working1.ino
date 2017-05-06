@@ -2,99 +2,143 @@
 #include <ArduinoJson.h>
 #include <EEPROM.h>
 
-const char* ssid         = "MyNetwork";  
-const char* password     = "itsourwifi";
+char emode[1] = "";
+char code[128] = "";
+char estatus[32] = "";
+
+char ssid[32] = "";
+char keyorpass[32] = "";
+char keyIndex[32] = "";
+
+const char* default_ssid         = "MyNetwork";  
+const char* default_password     = "itsourwifi";
+
 const char* host         = "52.32.132.3";  
 String path              = "/springjpaexample/ikk/apple";
 
-const int pin            = 2;
-char ssid_file[32]       = "";
-char password_file[32]   = "";
+const int pin            = 2; //blue light
+
+int loadCredentials() {
+  EEPROM.begin(512);
+
+  //Retreve mode
+  int size = 0;
+  EEPROM.get(size, emode);
+  
+  //retreve code
+  size = size + sizeof(emode); 
+  EEPROM.get(size, code);
+
+  //Retreve status
+  size = size + sizeof(code); 
+  EEPROM.get(size, estatus);
+
+  //Retreve ssid
+  size = size + sizeof(estatus); 
+  EEPROM.get(size, ssid);
+
+  //Retreve key or password
+  size = size + sizeof(ssid); 
+  EEPROM.get(size, keyorpass);
+
+  //Retreve keyIndex
+  size = size + sizeof(keyorpass); 
+  EEPROM.get(size, keyIndex);
+
+  EEPROM.end();
+  
+  Serial.println("Recovered credentials:");
+  Serial.println(emode);
+  Serial.println(code);
+  Serial.println(estatus);
+  Serial.println(ssid);
+  Serial.println(keyorpass);
+  Serial.println(keyIndex);
+
+  return 1;
+}
 
 void setup() {
-  int loadCred = 0;
   pinMode(pin, OUTPUT); 
-  pinMode(pin, HIGH);
+  pinMode(pin, LOW);
   Serial.begin(115200);
   delay(10);
   Serial.print("Connecting to ");
   Serial.println(ssid);
-  WiFi.begin(ssid, password);
+  int tries = 4;
+
+
+  if (String(emode) != String("1")) {
+    WiFi.begin(ssid);
+  }
+
+  if (String(emode) != String("2")) {
+    WiFi.begin(ssid, keyorpass);
+  }
 
   while (WiFi.status() != WL_CONNECTED) {
+    
+    if(tries == 0){
+      lights(5, 200, 1);//error
+    }
     delay(500);
-    if(WiFi.status() == WL_NO_SSID_AVAIL && loadCred == 0){
-      if(loadCredentials() == 1){
-        ssid     = ssid_file;
-        password = password_file;
+    if(WiFi.status() == WL_NO_SSID_AVAIL){
         Serial.println("Using secondary credentials to connect");
-        WiFi.begin(ssid);
-        loadCred =1;
-      }
-    }else if(WiFi.status() == WL_NO_SSID_AVAIL && loadCred != 0){
-      errorLights(1);
+        WiFi.begin(default_ssid, default_password);
+        tries = 4;
     }
+    tries--;
   }
 
-  Serial.print("WiFi connected to: ");  
-  Serial.print(ssid);
-  Serial.println(password);
+  Serial.print("WiFi connected!");
 }
 
-void errorLights(int errorCode){
-  Serial.print("Error occured: ");
-  Serial.println(errorCode);
-  int value = -1;
-  int count =10;
-  while(count > 0){
-    count--;
-    if(value > 0){
-      digitalWrite(pin, LOW);
-      delay(1000);
-    }else{
+void lights(int count, int edelay, int message){
+  int flag=1;
+  while(count!=0){
+    if(flag==1){
+      //high on light
       digitalWrite(pin, HIGH);
-      delay(1000);
+      flag=0;
+    }else{
+      //low on light
+      digitalWrite(pin, LOW);
+      flag=1;
     }
-    value= value*-1;
+    delay(edelay);
+    count--;
   }
-}
 
-void successLight(){
-  Serial.println("successLight");
-  int count =10;
-  while(count > 0){
-    count --;
-    digitalWrite(pin, HIGH);
-    delay(1000);
+  if(message==0){
+    Serial.println("Success light");
+  }else{
+    Serial.println("Error light");
   }
-}
-
-int loadCredentials() {
-  int retVal = 1;
-  EEPROM.begin(512);
-  EEPROM.get(0, ssid_file);
-  EEPROM.get(0+sizeof(ssid_file), password_file);
-  char ok[2+1];
-  EEPROM.get(0+sizeof(ssid_file)+sizeof(password_file), ok);
-  EEPROM.end();
-  if (String(ok) != String("OK")) {
-    ssid_file[0] = 0;
-    password_file[0] = 0;
-    retVal = 0;
-  }
-  Serial.print("Recovered credentials:");
-  Serial.print(ssid_file);
-  Serial.println(password_file);
-  return retVal;
+  //deep sleep
 }
 
 /** Store WLAN credentials to EEPROM */
 void saveCredentials() {
   EEPROM.begin(512);
-  EEPROM.put(0, ssid_file);
-  EEPROM.put(0+sizeof(ssid_file), password_file);
-  char ok[2+1] = "OK";
-  EEPROM.put(0+sizeof(ssid_file)+sizeof(password_file), ok);
+
+  int size =0;
+  EEPROM.put(size, emode);
+
+  size =size+ sizeof(emode); 
+  EEPROM.put(size, code);
+
+  size =size+ sizeof(code); 
+  EEPROM.put(size, estatus);
+
+  size =size+ sizeof(estatus); 
+  EEPROM.put(size, ssid);
+
+  size =size+ sizeof(ssid); 
+  EEPROM.put(size, keyorpass);
+
+  size =size+ sizeof(keyorpass); 
+  EEPROM.put(size, keyIndex);
+
   EEPROM.commit();
   EEPROM.end();
   Serial.println("New Credentials saved");
@@ -131,8 +175,6 @@ void loop() {
   while(loop == 1){
     if(client.available()){
       String line = client.readStringUntil('\r');
-      Serial.print("Result: ");
-      Serial.println(line);
       if (section=="header") {
         Serial.print(".");
         if (line=="\n") { 
@@ -145,52 +187,48 @@ void loop() {
         Serial.print("Result: ");
         Serial.println(result);
         int size = result.length() + 1;
-        Serial.print("a");
         char json[size];
         result.toCharArray(json, size);
-        Serial.print("b");
         StaticJsonBuffer<200> jsonBuffer;
-        Serial.print("c");
         JsonObject& json_parsed = jsonBuffer.parseObject(json);
-        Serial.print("d");
         if (!json_parsed.success())
         {
-          Serial.print("e");
           Serial.println("parseObject() failed");
           return;
         }
-        Serial.print("f");
-        if (strcmp(json_parsed["message"], "Success") == 0) {
-          digitalWrite(pin, HIGH); 
-          Serial.println("LED ON");
-          if (strcmp(json_parsed["hasPassword"], "true") == 0) {
-            Serial.println("***********Password is available :**************");
-            String newSSID = json_parsed["ssid"];
-            String newPassword = json_parsed["password"];
-            Serial.println(newSSID);
-            Serial.println(newPassword);
-            Serial.println("-----------Cred Before saving--------------");
-            newSSID.toCharArray(ssid_file, newSSID.length() + 1);
-            newPassword.toCharArray(password_file, newPassword.length() + 1);
-            Serial.println(ssid_file);
-            Serial.println(password_file);
-            saveCredentials();
-            Serial.println("-------Cred after saving-------------");
-            loadCredentials();
-          }
-          successLight();
-          loop =0;
+        String sestatus = json_parsed["status"];
+        sestatus.toCharArray(estatus, sestatus.length() + 1);
+        if(strcmp(estatus, "decline") == 0 || strcmp(estatus, "error") == 0){
+          saveCredentials();
+          lights(5, 200, 1);//error
         }
-        else {
-          Serial.println("---------Status in not success----------");
-          errorLights(2);
-          loop =0;
+        String semode = json_parsed["mode"];
+        String scode = json_parsed["code"];
+        sestatus.toCharArray(estatus, sestatus.length() + 1);
+        sestatus.toCharArray(estatus, sestatus.length() + 1);
+        
+        if(strcmp(emode, "4") != 0 ){
+          String s_ssid = json_parsed["ssid"];
+          s_ssid.toCharArray(ssid, s_ssid.length() + 1);
         }
+
+        if(strcmp(emode, "2") == 0 ){
+          String skeyorpass = json_parsed["keyorpass"];
+          skeyorpass.toCharArray(keyorpass, skeyorpass.length() + 1);
+        }
+
+        if(strcmp(emode, "3") == 0 ){
+          String skeyorpass = json_parsed["keyorpass"];
+          String skeyIndex = json_parsed["keyIndex"];
+          skeyorpass.toCharArray(keyorpass, skeyorpass.length() + 1);
+          skeyIndex.toCharArray(keyIndex, skeyIndex.length() + 1);
+        }
+        saveCredentials();
+        lights(10, 100, 0);
       }
     }else{
       delay(500);
     }
-  }
-  
+  } 
   Serial.println("closing connection. ");
 }

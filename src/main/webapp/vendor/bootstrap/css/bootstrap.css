@@ -1143,6 +1143,10 @@ img {
 .img-circle {
   border-radius: 50%;
 }
+.img-circle-about {
+  border-radius: 50%;
+  background-color: #1b72bd;
+}
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
