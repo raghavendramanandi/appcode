@@ -11,7 +11,7 @@
 	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
  
  	<!-- It register the beans in context and scan the annotations inside beans and activate them -->
-    <context:component-scan base-package="com.howtodoinjava.demo" />
+    <context:component-scan base-package="com.ikk.demo" />
     
     <!-- This allow for dispatching requests to Controllers by registering 
     	 two beans - DefaultAnnotationHandlerMapping and AnnotationMethodHandlerAdapter -->
@@ -36,15 +36,15 @@
     <mvc:resources mapping="/vendor/**" location="/vendor/" cache-period="31556926"/>
     <mvc:resources mapping="/headerIndex/**" location="/headerIndex/" cache-period="31556926"/>
     
-    <!-- To validate the posted add employee form -->
-    <bean id="employeeValidator" class="com.howtodoinjava.demo.validator.EmployeeValidator" />
+    <!-- To validate the posted add employee form
+    <bean id="employeeValidator" class="com.ikk.demo.validator.EmployeeValidator" /> -->
     
     <!-- This produces a container-managed EntityManagerFactory; 
     	 rather than application-managed EntityManagerFactory as in case of LocalEntityManagerFactoryBean-->
     <bean id="entityManagerFactoryBean" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
       <property name="dataSource" ref="dataSource" />
       <!-- This makes /META-INF/persistence.xml is no longer necessary -->
-      <property name="packagesToScan" value="com.howtodoinjava.demo.model" />
+      <property name="packagesToScan" value="com.ikk.demo.model" />
       <!-- JpaVendorAdapter implementation for Hibernate EntityManager.
       	   Exposes Hibernate's persistence provider and EntityManager extension interface -->
       <property name="jpaVendorAdapter">
@@ -62,7 +62,8 @@
    		configuring the plain old JDBC DriverManager via bean properties -->
    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
       <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-      <property name="url" value="jdbc:mysql://localhost:3306/test" />
+      <property name="url" value="jdbc:mysql://localhost:8889/test" />
+      <!-- <property name="url" value="jdbc:mysql://localhost:3306/test" /> -->
       <property name="username" value="root" />
       <property name="password" value="root" />
    </bean>
