@@ -144,6 +144,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>springjpaexample</finalName>
+		<finalName>ikk</finalName>
 	</build>
 </project>
