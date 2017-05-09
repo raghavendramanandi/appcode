@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -23,7 +24,10 @@ public class TaskEntity implements Serializable{
 	private int id;
 	@NotBlank
 	private TaskType taskType;
+	
+	@ManyToOne
 	private DeviceEntity device;
+	
 	@NotBlank
 	private Status status;
 	@NotNull
@@ -32,6 +36,7 @@ public class TaskEntity implements Serializable{
 	private Date updatedDateTime;
 	private String misc1;
 	private String misc2;
+	
 	public TaskEntity(int id, TaskType taskType, DeviceEntity device, Status status, Date createDateTime,
 			Date updatedDateTime, String misc1, String misc2) {
 		super();

@@ -7,14 +7,9 @@ public class ErrorResponse extends Response implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String message;
 	private String code;
-	
-	public ErrorResponse() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
-	public ErrorResponse(String message, String code) {
-		super();
+	public ErrorResponse(String message, String code, String data ) {
+		super(data);
 		this.message = message;
 		this.code = code;
 	}

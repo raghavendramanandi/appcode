@@ -1,7 +1,9 @@
 package com.ikk.demo.data.encryption;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class Generator {
-	
 	public boolean [] getRandomNumber(int size) {
 		boolean arr[] = new boolean[size];
 		for (int i = 0; i < arr.length; i++) {

@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ikk.demo.model.DepartmentEntity;
+import com.ikk.demo.Exception.DeviceCannotFindException;
 import com.ikk.demo.model.DeviceEntity;
-import com.ikk.demo.model.EmployeeEntity;
 import com.ikk.demo.model.UserEntity;
 
 @Repository
@@ -39,5 +39,15 @@ public class DeviceDAOImpl implements DeviceDAO{
 		//Use null checks and handle them
 		device.setUser(getUserById(device.getUser().getId()));
 		manager.persist(device);
+	}
+
+	public DeviceEntity getDeviceById(Integer id) throws DeviceCannotFindException {
+		Query query = manager.createNamedQuery("Select d From DeviceEntity d where id = :id");
+		query.setParameter("id", id);
+		List<DeviceEntity> devices = query.getResultList();
+		if(devices.size() == 1)
+			return devices.get(0);
+		else
+			throw new DeviceCannotFindException();
 	}
 }

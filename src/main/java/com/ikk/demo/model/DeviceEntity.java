@@ -25,13 +25,14 @@ public class DeviceEntity implements Serializable {
 	private String connName;
 	private String connPassword;
 	private String connMode;
+	private String operationMode;
 	
 	@NotNull
 	@ManyToOne
 	private UserEntity user;
 
 	public DeviceEntity(Integer id, String name, String securityCode, int clickCount, int securityRetryCount,
-			String connName, String connPassword, String connMode, UserEntity user) {
+			String connName, String connPassword, String connMode, UserEntity user, String operationMode) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -42,6 +43,7 @@ public class DeviceEntity implements Serializable {
 		this.connPassword = connPassword;
 		this.connMode = connMode;
 		this.user = user;
+		this.operationMode = operationMode;
 	}
 
 	public DeviceEntity() {
@@ -123,11 +125,20 @@ public class DeviceEntity implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	public void setOperationMode(String operationMode) {
+		this.operationMode = operationMode;
+	}
+
+	public String getOperationMode() {
+		return this.operationMode;
+	}
 
 	@Override
 	public String toString() {
 		return "DeviceEntity [id=" + id + ", name=" + name + ", securityCode=" + securityCode + ", clickCount="
 				+ clickCount + ", securityRetryCount=" + securityRetryCount + ", connName=" + connName
-				+ ", connPassword=" + connPassword + ", connMode=" + connMode + ", user=" + user + "]";
+				+ ", connPassword=" + connPassword + ", connMode=" + connMode + ", operationMode=" + operationMode
+				+ ", user=" + user + "]";
 	}
 }
