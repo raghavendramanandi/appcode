@@ -7,7 +7,6 @@ public class Encryper {
 
 	public boolean[] getEncryptedValue(boolean[] arr) {
 		IEncryprFunction encryptFunction = new EncryptFunction();
-		encryptFunction.encrypt(arr);
-		return null;
+		return encryptFunction.encrypt(arr);
 	}
 }

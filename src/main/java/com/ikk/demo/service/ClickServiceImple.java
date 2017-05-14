@@ -35,6 +35,7 @@ public class ClickServiceImple implements ClickService{
 		
 		//This segment of code will never fail
 		boolean [] generatedData = generator.getRandomNumber(128);
+		System.out.println(generatedData);
 		String encryptedData = Util.GetString(encryper.getEncryptedValue(generatedData));
 		
 		try {
@@ -54,7 +55,7 @@ public class ClickServiceImple implements ClickService{
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ErrorResponse("Error", "200", Util.GetString(generatedData));
+			return new ErrorResponse("Error", "200","");
 		}
 	}
 }

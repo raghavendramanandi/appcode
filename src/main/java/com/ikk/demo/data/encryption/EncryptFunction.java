@@ -2,36 +2,24 @@ package com.ikk.demo.data.encryption;
 
 public class EncryptFunction implements IEncryprFunction{
 
-	public void encrypt(boolean[] message) {
-		//fixed size intervals = start with 3 bits
-		//mod n of functions will define which function to call
-		//
-		
-		int sizeOfSnippet = 4; // size of snippet should give perfect devisible number
-		makeSnippets(message, sizeOfSnippet);
-		//printSubText(subArray);
-	}
-	
-	private void makeSnippets(boolean[] message, int sizeOfSnippet) {
-		int numberOfDenomination = message.length / sizeOfSnippet;
-		Boolean [] subArray;
-		for(int i =0;i< numberOfDenomination ;i++){
-			subArray = new Boolean[sizeOfSnippet];
-			for(int j =0;j<sizeOfSnippet;j++){
-				subArray[j] = message[(i*sizeOfSnippet)+j];
-				//System.out.print((i*sizeOfSnippet)+j + " ,");
-			}
-			System.out.println();
-			printSubText(subArray);
-		}
+	public boolean[] encrypt(boolean[] message) {
+		int sizeOfSnippet = 4; 
+		return doEncryption(message, sizeOfSnippet);
 	}
 
-	private Boolean [] printSubText(Boolean [] snippet) {
-		for (Boolean boolean1 : snippet) {
-			System.out.print(boolean1);
+	private boolean[] doEncryption(boolean[] message, int sizeOfSnippet) {
+		boolean[] encryptedMessage = new boolean[message.length];
+		int size = message.length;
+		int offset =0;
+		for (int i = 0; i < sizeOfSnippet; i++) {
+			offset = offset + (2^i);
 		}
-		System.out.println();
-		return snippet;
+		offset += 50;
+		boolean mask = false;//,true,false,false};
+		for (int i = 0; i < message.length; i+=sizeOfSnippet) {
+			encryptedMessage[i] = message[i] & mask | message[i] ^ !mask ^ !(message[(offset + i) % size ]) ; 
+		}
+		System.out.println(encryptedMessage);
+		return encryptedMessage;
 	}
-
 }
