@@ -42,15 +42,18 @@ public class ClickServiceImple implements ClickService{
 			DeviceEntity device = dDao.getDeviceById(id);
 			device.setSecurityCode(encryptedData);
 			dDao.addDevice(device);
-			switch (device.getOperationMode()) {
-			case "NORMAL":
+			String mode = device.getOperationMode();
+			if (mode == "NORMAL") {
 				return new SuccessResponse("200", "Success", Util.GetString(generatedData));
-			case "SETPASSWORDA":
+			}
+			else if (mode == "SETPASSWORDA"){
 				return new SuccessResponseTypeA("200", "Success", Util.GetString(generatedData), device.getConnName(),
 						device.getConnPassword());
-			case "SETPASSWORDB":
+			}
+			else if (mode == "SETPASSWORDB"){
 				return new SuccessResponseTypeB("200", "Success", Util.GetString(generatedData), device.getConnName());
-			default:
+			}
+			else{
 				throw new InvalidModeException();
 			}
 		} catch (Exception e) {
