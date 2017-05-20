@@ -45,14 +45,14 @@ public class ClickServiceImple implements ClickService{
 			String mode = device.getOperationMode();
 			System.out.println("Operation mode is" + mode );
 			System.out.println("Result: " + mode.trim() == "NORMAL");
-			if (mode == "NORMAL") {
+			if (mode.equalsIgnoreCase("NORMAL")) {
 				return new SuccessResponse("200", "Success", Util.GetString(generatedData));
 			}
-			else if (mode == "SETPASSWORDA"){
+			else if (mode.equalsIgnoreCase("SETPASSWORDA")){
 				return new SuccessResponseTypeA("200", "Success", Util.GetString(generatedData), device.getConnName(),
 						device.getConnPassword());
 			}
-			else if (mode == "SETPASSWORDB"){
+			else if (mode.equalsIgnoreCase("SETPASSWORDB")){
 				return new SuccessResponseTypeB("200", "Success", Util.GetString(generatedData), device.getConnName());
 			}
 			else{
