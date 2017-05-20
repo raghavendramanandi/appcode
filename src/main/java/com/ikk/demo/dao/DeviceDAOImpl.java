@@ -42,7 +42,7 @@ public class DeviceDAOImpl implements DeviceDAO{
 	}
 
 	public DeviceEntity getDeviceById(Integer id) throws DeviceCannotFindException {
-		Query query = manager.createNamedQuery("Select d From DeviceEntity d where id = :id");
+		Query query = manager.createQuery("Select d From DeviceEntity d where id = :id");
 		query.setParameter("id", id);
 		List<DeviceEntity> devices = query.getResultList();
 		if(devices.size() == 1)
