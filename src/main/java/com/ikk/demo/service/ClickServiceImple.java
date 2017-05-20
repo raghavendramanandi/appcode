@@ -43,7 +43,7 @@ public class ClickServiceImple implements ClickService{
 			device.setSecurityCode(encryptedData);
 			dDao.saveOrUpdate(device);
 			String mode = device.getOperationMode();
-			System.out.println("Operation mode is" + mode);
+			System.out.println("Operation mode is" + mode + "Result: " + mode == "NORMAL");
 			if (mode == "NORMAL") {
 				return new SuccessResponse("200", "Success", Util.GetString(generatedData));
 			}
