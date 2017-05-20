@@ -41,7 +41,7 @@ public class ClickServiceImple implements ClickService{
 		try {
 			DeviceEntity device = dDao.getDeviceById(id);
 			device.setSecurityCode(encryptedData);
-			dDao.addDevice(device);
+			dDao.saveOrUpdate(device);
 			String mode = device.getOperationMode();
 			if (mode == "NORMAL") {
 				return new SuccessResponse("200", "Success", Util.GetString(generatedData));
