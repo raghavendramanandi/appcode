@@ -13,4 +13,5 @@ public interface DeviceDAO {
 	public List<UserEntity> getAllUsers();
 	public void addDevice(DeviceEntity device);
 	public DeviceEntity getDeviceById(Integer id) throws DeviceCannotFindException;
+	public void saveOrUpdate(DeviceEntity device);
 }

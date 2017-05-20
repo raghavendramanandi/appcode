@@ -41,6 +41,12 @@ public class DeviceDAOImpl implements DeviceDAO{
 		manager.persist(device);
 	}
 
+	public void saveOrUpdate(DeviceEntity device) {
+		//Use null checks and handle them
+		//device.setUser(getUserById(device.getUser().getId()));
+		manager.merge(device);
+	}
+	
 	public DeviceEntity getDeviceById(Integer id) throws DeviceCannotFindException {
 		Query query = manager.createQuery("Select d From DeviceEntity d where id = :id");
 		query.setParameter("id", id);
