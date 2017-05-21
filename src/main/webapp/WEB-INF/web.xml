@@ -37,7 +37,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>BasicFilter</filter-name>
-		<url-pattern>/ikk/*</url-pattern>
+		<url-pattern>/button/*</url-pattern>
 	</filter-mapping>
 
 </web-app>

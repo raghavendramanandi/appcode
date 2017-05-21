@@ -143,7 +143,7 @@ void loop() {
     delay(500);
   }
   String PostData = "{code=";
-  PostData =  PostData + code + ",id=1234}";
+  PostData =  PostData + code +"}";
   client.println("POST /posts HTTP/1.1");
   client.println("Host: jsonplaceholder.typicode.com");
   client.println("Cache-Control: no-cache");

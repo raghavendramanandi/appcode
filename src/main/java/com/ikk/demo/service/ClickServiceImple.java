@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 
 import com.ikk.demo.Exception.DeviceCannotFindException;
 import com.ikk.demo.Exception.InvalidModeException;
+import com.ikk.demo.Exception.InvalidRequestException;
+import com.ikk.demo.Request.ClickRequest;
 import com.ikk.demo.Util.Util;
 import com.ikk.demo.dao.DeviceDAO;
 import com.ikk.demo.dao.MessageDAO;
@@ -31,7 +33,7 @@ public class ClickServiceImple implements ClickService{
 	@Autowired
 	Encryper encryper;
 
-	public Response ClickAction(Integer id){
+	public Response ClickAction(Integer id, ClickRequest postData){
 		
 		//This segment of code will never fail
 		boolean [] generatedData = generator.getRandomNumber(128);
@@ -40,6 +42,11 @@ public class ClickServiceImple implements ClickService{
 		
 		try {
 			DeviceEntity device = dDao.getDeviceById(id);
+			
+			if(!device.getSecurityCode().equals(postData.getCode())){
+				throw new InvalidRequestException();
+			}
+			
 			device.setSecurityCode(encryptedData);
 			dDao.saveOrUpdate(device);
 			String mode = device.getOperationMode();

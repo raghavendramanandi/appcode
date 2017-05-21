@@ -38,6 +38,6 @@ public class RequestControllor
 			method = RequestMethod.POST)
 	public Response OnClick(@PathVariable("id") int id, @RequestBody ClickRequest PostData ){
 			System.out.println(PostData);
-			return cs.ClickAction(id);
+			return cs.ClickAction(id, PostData);
 	}
 }
