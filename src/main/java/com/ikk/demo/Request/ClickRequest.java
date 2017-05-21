@@ -3,6 +3,8 @@ package com.ikk.demo.Request;
 import java.io.Serializable;
 
 public class ClickRequest implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private String code;
 	
 	public ClickRequest(String code) {
@@ -10,7 +12,6 @@ public class ClickRequest implements Serializable{
 	}
 	
 	public ClickRequest() {
-	
 	}
 	
 	@Override
