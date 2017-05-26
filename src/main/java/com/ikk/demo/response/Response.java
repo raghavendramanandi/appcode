@@ -1,23 +1,17 @@
 package com.ikk.demo.response;
 
-public class Response {
-	private String data;
+import java.io.Serializable;
 
-	public String getCode() {
-		return data;
-	}
+public class Response implements Serializable{
 
-	public void setCode(String code) {
-		this.data = code;
-	}
-
-	public Response(String code) {
+	private static final long serialVersionUID = 1L;
+	
+	public Response() {
 		super();
-		this.data = code;
 	}
 
 	@Override
 	public String toString() {
-		return "Response [code=" + data + "]";
+		return "Response ";
 	}
 }

@@ -9,7 +9,7 @@ char password[32];
 
 const char* defaultssid         = "MyNetwork";
 const char* default_password    = "itsourwifi";
-const char* host                = "54.68.132.64";
+const char* host                = "52.40.154.185";
 String path                     = "/ikk/button/click/2";
 const int pin                   = 2; //blue light
 int maxAttemptsToConnect        = 2;
@@ -74,7 +74,7 @@ void setup() {
     WiFi.begin(defaultssid, default_password);
   }
 
-  while ( !(WiFi.status() == WL_CONNECTED || WiFi.status() == WL_NO_SSID_AVAIL) ) {
+  while ( !(WiFi.status() == WL_CONNECTED || WiFi.status() == WL_NO_SSID_AVAIL || WiFi.status() == WL_DISCONNECTED ) ) {
     Serial.print("Attempting to connect to WEP network, SSID: ");
     Serial.println(defaultssid);
     delay(500);
@@ -142,15 +142,25 @@ void loop() {
     Serial.println("connection failed");
     delay(500);
   }
-  String PostData = "{code=";
-  PostData =  PostData + code +"}";
-  client.println("POST /posts HTTP/1.1");
+
+  String PostData = "{\"code\":";
+    PostData =  PostData + "\""+ code +"\"}";
+    Serial.println(PostData);
+    
+  /*StaticJsonBuffer<200> jsonBuffer;
+  JsonObject& root = jsonBuffer.createObject();
+  root["code"] = code;
+  char jsonChar[200];*/
+
+  client.println("POST /ikk/button/click/2 HTTP/1.1");
   client.println("Host: jsonplaceholder.typicode.com");
   client.println("Cache-Control: no-cache");
-  client.println("Content-Type: application/x-www-form-urlencoded");
+  client.println("Content-Type: application/JSON");
   client.print("Content-Length: ");
+  //client.println(root.measureLength() + 1);
   client.println(PostData.length());
   client.println();
+  //client.println(root.printTo((char*)jsonChar, root.measureLength() + 1));
   client.println(PostData);
 
   while (!client.available()) {
@@ -161,8 +171,13 @@ void loop() {
   {
     if ( client.available() )
     {
-      char str = client.read();
-      Serial.print(str);
+      String line = client.readStringUntil('\r');
+      Serial.println(line);
+      /*if (line == "\n") {
+          line = client.readStringUntil('\r');
+          Serial.println("Done");
+          Serial.print(line);
+        }*/
     }
   }
 }

@@ -8,8 +8,7 @@ public class ErrorResponse extends Response implements Serializable {
 	private String message;
 	private String code;
 
-	public ErrorResponse(String message, String code, String data ) {
-		super(data);
+	public ErrorResponse(String message, String code ) {
 		this.message = message;
 		this.code = code;
 	}

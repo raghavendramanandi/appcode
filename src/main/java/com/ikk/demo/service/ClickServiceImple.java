@@ -42,32 +42,37 @@ public class ClickServiceImple implements ClickService{
 		
 		try {
 			DeviceEntity device = dDao.getDeviceById(id);
-			
-			if(!device.getSecurityCode().equals(postData.getCode())){
-				throw new InvalidRequestException();
-			}
-			
+			authorizeClick(postData, device);
 			device.setSecurityCode(encryptedData);
 			dDao.saveOrUpdate(device);
 			String mode = device.getOperationMode();
-			System.out.println("Operation mode is" + mode );
-			System.out.println("Result: " + mode.trim() == "NORMAL");
-			if (mode.equalsIgnoreCase("NORMAL")) {
-				return new SuccessResponse("200", "Success", Util.GetString(generatedData));
-			}
-			else if (mode.equalsIgnoreCase("SETPASSWORDA")){
-				return new SuccessResponseTypeA("200", "Success", Util.GetString(generatedData), device.getConnName(),
-						device.getConnPassword());
-			}
-			else if (mode.equalsIgnoreCase("SETPASSWORDB")){
-				return new SuccessResponseTypeB("200", "Success", Util.GetString(generatedData), device.getConnName());
-			}
-			else{
-				throw new InvalidModeException();
-			}
+			return resolveResponseFor(generatedData, device, mode);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ErrorResponse("Error", "200","");
+			return new ErrorResponse("Error", "200");
+		}
+	}
+
+	private void authorizeClick(ClickRequest postData, DeviceEntity device) throws InvalidRequestException {
+		if(!device.getSecurityCode().equals(postData.getCode())){
+			throw new InvalidRequestException();
+		}
+	}
+
+	private Response resolveResponseFor(boolean[] generatedData, DeviceEntity device, String mode)
+			throws InvalidModeException {
+		if (mode.equalsIgnoreCase("NORMAL")) {
+			return new SuccessResponse("200", "Success", Util.GetString(generatedData));
+		}
+		else if (mode.equalsIgnoreCase("SETPASSWORDA")){
+			return new SuccessResponseTypeA("200", "Success", Util.GetString(generatedData), device.getConnName(),
+					device.getConnPassword());
+		}
+		else if (mode.equalsIgnoreCase("SETPASSWORDB")){
+			return new SuccessResponseTypeB("200", "Success", Util.GetString(generatedData), device.getConnName());
+		}
+		else{
+			throw new InvalidModeException();
 		}
 	}
 }
