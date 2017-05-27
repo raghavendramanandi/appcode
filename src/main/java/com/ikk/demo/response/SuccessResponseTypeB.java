@@ -7,10 +7,9 @@ public class SuccessResponseTypeB extends Response implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String connName;
 	private String code;
-	private String message;
 	private String data;
 
-	public SuccessResponseTypeB(String code, String message, String data, String connName) {
+	public SuccessResponseTypeB(String code, String data, String connName) {
 		super();
 		this.connName = connName;
 	}
@@ -38,17 +37,9 @@ public class SuccessResponseTypeB extends Response implements Serializable {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	@Override
 	public String toString() {
-		return "SuccessResponseTypeB [connName=" + connName + ", code=" + code + ", message=" + message + ", data="
+		return "SuccessResponseTypeB [connName=" + connName + ", code=" + code + ", data="
 				+ data + "]";
 	}
 }

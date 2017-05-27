@@ -144,13 +144,13 @@ void loop() {
   }
 
   String PostData = "{\"code\":";
-    PostData =  PostData + "\""+ code +"\"}";
-    Serial.println(PostData);
-    
+  PostData =  PostData + "\"" + code + "\"}";
+  Serial.println(PostData);
+
   /*StaticJsonBuffer<200> jsonBuffer;
-  JsonObject& root = jsonBuffer.createObject();
-  root["code"] = code;
-  char jsonChar[200];*/
+    JsonObject& root = jsonBuffer.createObject();
+    root["code"] = code;
+    char jsonChar[200];*/
 
   client.println("POST /ikk/button/click/2 HTTP/1.1");
   client.println("Host: jsonplaceholder.typicode.com");
@@ -173,11 +173,50 @@ void loop() {
     {
       String line = client.readStringUntil('\r');
       Serial.println(line);
-      /*if (line == "\n") {
-          line = client.readStringUntil('\r');
-          Serial.println("Done");
-          Serial.print(line);
-        }*/
+      if (line == "\n") {
+        line = client.readStringUntil('\r');
+        Serial.println("Done");
+        Serial.print(line);
+        String result = line.substring(1);
+        Serial.println(result);
+        int size = result.length() + 1;
+        char json[size];
+        result.toCharArray(json, size);
+        StaticJsonBuffer<200> jsonBuffer;
+        JsonObject& json_parsed = jsonBuffer.parseObject(json);
+        if (!json_parsed.success())
+        {
+          Serial.println("parseObject() failed");
+          return;
+        }
+
+        String responseCode = json_parsed["code"];
+
+        if(responseCode != 200){
+          Serial.println("500 Response");
+          //return;
+        }
+        
+        String data = json_parsed["data"];
+        Serial.println(data);
+        if(data != "") {
+          data.toCharArray(code, data.length() + 1);
+        }
+        String connName = json_parsed["connName"];
+        Serial.println(connName);
+        if(connName != "") {
+          connName.toCharArray(ssid, connName.length() + 1);
+        }
+
+        String s_password = json_parsed["password"];
+        Serial.println(s_password);
+        if(s_password != "") {
+          s_password.toCharArray(password, s_password.length() + 1);
+        }
+
+        saveCredentials();
+        
+      }
     }
   }
 }

@@ -2,8 +2,6 @@ package com.ikk.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.ikk.demo.Exception.DeviceCannotFindException;
 import com.ikk.demo.Exception.InvalidModeException;
 import com.ikk.demo.Exception.InvalidRequestException;
 import com.ikk.demo.Request.ClickRequest;
@@ -49,7 +47,7 @@ public class ClickServiceImple implements ClickService{
 			return resolveResponseFor(generatedData, device, mode);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ErrorResponse("Error", "200");
+			return new ErrorResponse("500");
 		}
 	}
 
@@ -62,14 +60,14 @@ public class ClickServiceImple implements ClickService{
 	private Response resolveResponseFor(boolean[] generatedData, DeviceEntity device, String mode)
 			throws InvalidModeException {
 		if (mode.equalsIgnoreCase("NORMAL")) {
-			return new SuccessResponse("200", "Success", Util.GetString(generatedData));
+			return new SuccessResponse("200", Util.GetString(generatedData));
 		}
 		else if (mode.equalsIgnoreCase("SETPASSWORDA")){
-			return new SuccessResponseTypeA("200", "Success", Util.GetString(generatedData), device.getConnName(),
+			return new SuccessResponseTypeA("200", Util.GetString(generatedData), device.getConnName(),
 					device.getConnPassword());
 		}
 		else if (mode.equalsIgnoreCase("SETPASSWORDB")){
-			return new SuccessResponseTypeB("200", "Success", Util.GetString(generatedData), device.getConnName());
+			return new SuccessResponseTypeB("200", Util.GetString(generatedData), device.getConnName());
 		}
 		else{
 			throw new InvalidModeException();

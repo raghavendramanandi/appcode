@@ -5,20 +5,10 @@ import java.io.Serializable;
 public class ErrorResponse extends Response implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private String message;
 	private String code;
 
-	public ErrorResponse(String message, String code ) {
-		this.message = message;
+	public ErrorResponse(String code ) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getCode() {
@@ -31,7 +21,7 @@ public class ErrorResponse extends Response implements Serializable {
 
 	@Override
 	public String toString() {
-		return "ErrorResponse [message=" + message + ", code=" + code + "]";
+		return "ErrorResponse " + " code=" + code + "]";
 	}
 	
 	
