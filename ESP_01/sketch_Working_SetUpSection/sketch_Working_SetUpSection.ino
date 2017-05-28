@@ -132,6 +132,12 @@ void saveCredentials() {
   Serial.println("New Credentials saved");
 }
 
+bool getBool(char in) {
+  if (in == '1')
+    return true;
+  return false;
+}
+
 void loop() {
   Serial.print("connecting to ");
   Serial.println(host);
@@ -176,8 +182,8 @@ void loop() {
       if (line == "\n") {
         line = client.readStringUntil('\r');
         line = client.readStringUntil('\r');
-        Serial.println("Done");
-        Serial.print("Response body: " + line);
+        //Serial.println("Done");
+        //Serial.print("Response body: " + line);
         String result = line.substring(1);
         Serial.println(result);
         int size = result.length() + 1;
@@ -192,33 +198,48 @@ void loop() {
         }
 
         String responseCode = json_parsed["code"];
-        if(responseCode != "200"){
+        if (responseCode != "200") {
           Serial.println("500 Response");
           return;
         }
-        
+
         String data = json_parsed["data"];
         Serial.println(data);
-        if(data != "") {
+        if (data != "") {
           Serial.println("data: " + data);
           data.toCharArray(code, data.length() + 1);
+          /****************************************************************/
+          int size = 128;
+          int offset = 0;
+          int sizeOfSnippet = 4;
+          for (int i = 0; i < sizeOfSnippet; i++) {
+            offset = offset + (2 ^ i);
+          }
+          offset += 50;
+          boolean mask = false;//,true,false,false};
+          for (int i = 0; i < 128; i++) {
+            bool ans = getBool(code[i]) & mask | getBool(code[i]) ^ !mask ^ !(getBool(code[(offset + i) % size ]));
+            code[i] = ans ? '1' : '0';
+          }
+          Serial.println(code);
+          /****************************************************************/
         }
         String connName = json_parsed["connName"];
         Serial.println(connName);
-        if(connName != "") {
+        if (connName != "") {
           Serial.println("connName: " + connName);
           connName.toCharArray(ssid, connName.length() + 1);
         }
 
         String s_password = json_parsed["password"];
         Serial.println(s_password);
-        if(s_password != "") {
-          Serial.println("password: "+ s_password );
+        if (s_password != "") {
+          Serial.println("password: " + s_password );
           s_password.toCharArray(password, s_password.length() + 1);
         }
 
         saveCredentials();
-        
+
       }
     }
   }
