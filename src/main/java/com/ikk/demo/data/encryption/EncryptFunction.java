@@ -16,7 +16,7 @@ public class EncryptFunction implements IEncryprFunction{
 		}
 		offset += 50;
 		boolean mask = false;//,true,false,false};
-		for (int i = 0; i < message.length; i+=sizeOfSnippet) {
+		for (int i = 0; i < message.length; i++) {
 			encryptedMessage[i] = message[i] & mask | message[i] ^ !mask ^ !(message[(offset + i) % size ]) ; 
 		}
 		System.out.println(encryptedMessage);

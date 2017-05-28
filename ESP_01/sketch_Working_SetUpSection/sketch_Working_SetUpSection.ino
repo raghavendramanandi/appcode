@@ -145,7 +145,7 @@ void loop() {
 
   String PostData = "{\"code\":";
   PostData =  PostData + "\"" + code + "\"}";
-  Serial.println(PostData);
+  Serial.println("Request Data: " + PostData);
 
   /*StaticJsonBuffer<200> jsonBuffer;
     JsonObject& root = jsonBuffer.createObject();
@@ -172,11 +172,12 @@ void loop() {
     if ( client.available() )
     {
       String line = client.readStringUntil('\r');
-      Serial.println(line);
+      Serial.print(line);
       if (line == "\n") {
         line = client.readStringUntil('\r');
+        line = client.readStringUntil('\r');
         Serial.println("Done");
-        Serial.print(line);
+        Serial.print("Response body: " + line);
         String result = line.substring(1);
         Serial.println(result);
         int size = result.length() + 1;
@@ -191,26 +192,28 @@ void loop() {
         }
 
         String responseCode = json_parsed["code"];
-
-        if(responseCode != 200){
+        if(responseCode != "200"){
           Serial.println("500 Response");
-          //return;
+          return;
         }
         
         String data = json_parsed["data"];
         Serial.println(data);
         if(data != "") {
+          Serial.println("data: " + data);
           data.toCharArray(code, data.length() + 1);
         }
         String connName = json_parsed["connName"];
         Serial.println(connName);
         if(connName != "") {
+          Serial.println("connName: " + connName);
           connName.toCharArray(ssid, connName.length() + 1);
         }
 
         String s_password = json_parsed["password"];
         Serial.println(s_password);
         if(s_password != "") {
+          Serial.println("password: "+ s_password );
           s_password.toCharArray(password, s_password.length() + 1);
         }
 
