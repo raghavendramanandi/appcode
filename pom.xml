@@ -151,6 +151,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>ikk</finalName>
+		<finalName>ROOT</finalName>
 	</build>
 </project>

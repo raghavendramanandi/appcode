@@ -10,7 +10,7 @@ char password[32];
 const char* defaultssid         = "MyNetwork";
 const char* default_password    = "itsourwifi";
 const char* host                = "52.40.154.185";
-String path                     = "/ikk/button/click/2";
+String path                     = "/ikk/button/click/1";
 const int pin                   = 2; //blue light
 int maxAttemptsToConnect        = 2;
 
@@ -158,7 +158,7 @@ void loop() {
     root["code"] = code;
     char jsonChar[200];*/
 
-  client.println("POST /ikk/button/click/2 HTTP/1.1");
+  client.println("POST /ikk/button/click/1 HTTP/1.1");
   client.println("Host: jsonplaceholder.typicode.com");
   client.println("Cache-Control: no-cache");
   client.println("Content-Type: application/JSON");
@@ -204,9 +204,7 @@ void loop() {
         }
 
         String data = json_parsed["data"];
-        Serial.println(data);
         if (data != "") {
-          Serial.println("data: " + data);
           data.toCharArray(code, data.length() + 1);
           /****************************************************************/
           int size = 128;
@@ -237,10 +235,9 @@ void loop() {
           Serial.println("password: " + s_password );
           s_password.toCharArray(password, s_password.length() + 1);
         }
-
         saveCredentials();
-
       }
     }
+    ESP.deepSleep(100000);
   }
 }

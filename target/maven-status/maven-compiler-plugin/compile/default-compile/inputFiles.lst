@@ -25,7 +25,9 @@
 /Users/rmramesh/A/appcode/ikk/src/main/java/com/ikk/demo/data/validation/SecurityValidation.java
 /Users/rmramesh/A/appcode/ikk/src/main/java/com/ikk/demo/response/SuccessResponseTypeB.java
 /Users/rmramesh/A/appcode/ikk/src/main/java/com/ikk/demo/Exception/InvalidModeException.java
+/Users/rmramesh/A/appcode/ikk/src/main/java/com/ikk/demo/Exception/InvalidRequestException.java
 /Users/rmramesh/A/appcode/ikk/src/main/java/com/ikk/demo/dao/DeviceDAO.java
+/Users/rmramesh/A/appcode/ikk/src/main/java/com/ikk/demo/Request/ClickRequest.java
 /Users/rmramesh/A/appcode/ikk/src/main/java/com/ikk/demo/dao/MessageDAOImpl.java
 /Users/rmramesh/A/appcode/ikk/src/main/java/com/ikk/demo/service/ClickServiceImple.java
 /Users/rmramesh/A/appcode/ikk/src/main/java/com/ikk/demo/Util/Util.java
