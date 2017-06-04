@@ -8,6 +8,8 @@ public class EncryptFunction implements IEncryprFunction{
 	}
 
 	private boolean[] doEncryption(boolean[] message, int sizeOfSnippet) {
+		System.out.println("Input: ");
+		display(message);
 		boolean[] encryptedMessage = new boolean[message.length];
 		int size = message.length;
 		int offset =0;
@@ -25,6 +27,15 @@ public class EncryptFunction implements IEncryprFunction{
 			System.out.println("Output: "+encryptedMessage[i]);
 		}
 		System.out.println(encryptedMessage);
+		System.out.println("Output: ");
+		display(encryptedMessage);
 		return encryptedMessage;
+	}
+
+	private void display(boolean[] data) {
+		for (int i = 0; i < data.length; i++) {
+			System.out.print(data[i]?'1':'0');
+		}
+		System.out.println();
 	}
 }

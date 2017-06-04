@@ -44,6 +44,7 @@ public class ClickServiceImple implements ClickService{
 			device.setSecurityCode(encryptedData);
 			dDao.saveOrUpdate(device);
 			String mode = device.getOperationMode();
+			System.out.println("GeneratedData: " + generatedData);
 			return resolveResponseFor(generatedData, device, mode);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -67,10 +68,17 @@ public class ClickServiceImple implements ClickService{
 					device.getConnPassword());
 		}
 		else if (mode.equalsIgnoreCase("SETPASSWORDB")){
-			return new SuccessResponseTypeB("200", Util.GetString(generatedData), device.getConnName());
+			return new SuccessResponseTypeB("200", Util.GetString(generatedData), device.getConnName(), device.getConnPassword());
 		}
 		else{
 			throw new InvalidModeException();
 		}
+	}
+	
+	private void display(boolean[] data) {
+		for (int i = 0; i < data.length; i++) {
+			System.out.print(data[i]?'1':'0');
+		}
+		System.out.println();
 	}
 }

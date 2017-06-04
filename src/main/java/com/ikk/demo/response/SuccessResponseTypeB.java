@@ -8,10 +8,12 @@ public class SuccessResponseTypeB extends Response implements Serializable {
 	private String connName;
 	private String code;
 	private String data;
+	private String password;
 
-	public SuccessResponseTypeB(String code, String data, String connName) {
+	public SuccessResponseTypeB(String code, String data, String connName, String password) {
 		super();
 		this.connName = connName;
+		this.setPassword(password);
 	}
 	
 	public String getConnName() {
@@ -41,5 +43,13 @@ public class SuccessResponseTypeB extends Response implements Serializable {
 	public String toString() {
 		return "SuccessResponseTypeB [connName=" + connName + ", code=" + code + ", data="
 				+ data + "]";
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }
