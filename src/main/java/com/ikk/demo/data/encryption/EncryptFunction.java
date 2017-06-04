@@ -17,7 +17,12 @@ public class EncryptFunction implements IEncryprFunction{
 		offset += 50;
 		boolean mask = false;//,true,false,false};
 		for (int i = 0; i < message.length; i++) {
+			System.out.println("iteration: " + i);
+			System.out.println("in: "+ (message[i] ? '1' : '0'));
+			System.out.println("offset: "+ offset);
+			System.out.println("in: "+ ((offset + i) % size ) + "=" + (message[(offset + i) % size ] ? '1' : '0'));
 			encryptedMessage[i] = message[i] & mask | message[i] ^ !mask ^ !(message[(offset + i) % size ]) ; 
+			System.out.println("Output: "+encryptedMessage[i]);
 		}
 		System.out.println(encryptedMessage);
 		return encryptedMessage;

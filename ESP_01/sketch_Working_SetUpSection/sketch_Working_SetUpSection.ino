@@ -9,8 +9,8 @@ char password[32];
 
 const char* defaultssid         = "MyNetwork";
 const char* default_password    = "itsourwifi";
-const char* host                = "52.40.154.185";
-String path                     = "/ikk/button/click/1";
+const char* host                = "ec2-52-39-184-54.us-west-2.compute.amazonaws.com";
+String path                     = "/button/click/2";
 const int pin                   = 2; //blue light
 int maxAttemptsToConnect        = 2;
 
@@ -144,7 +144,7 @@ void loop() {
 
   WiFiClient client;
 
-  while (!client.connect(host, 8080)) {
+  while (!client.connect(host, 80)) {
     Serial.println("connection failed");
     delay(500);
   }
@@ -158,7 +158,7 @@ void loop() {
     root["code"] = code;
     char jsonChar[200];*/
 
-  client.println("POST /ikk/button/click/1 HTTP/1.1");
+  client.println("POST /button/click/2 HTTP/1.1");
   client.println("Host: jsonplaceholder.typicode.com");
   client.println("Cache-Control: no-cache");
   client.println("Content-Type: application/JSON");
@@ -182,8 +182,8 @@ void loop() {
       if (line == "\n") {
         line = client.readStringUntil('\r');
         line = client.readStringUntil('\r');
-        //Serial.println("Done");
-        //Serial.print("Response body: " + line);
+        Serial.println("Done");
+        Serial.print("Response body: ");
         String result = line.substring(1);
         Serial.println(result);
         int size = result.length() + 1;
@@ -206,7 +206,6 @@ void loop() {
         String data = json_parsed["data"];
         if (data != "") {
           data.toCharArray(code, data.length() + 1);
-          /****************************************************************/
           int size = 128;
           int offset = 0;
           int sizeOfSnippet = 4;
@@ -215,12 +214,31 @@ void loop() {
           }
           offset += 50;
           boolean mask = false;//,true,false,false};
+          Serial.print("Input: ");
+          Serial.println(code);
           for (int i = 0; i < 128; i++) {
+            Serial.print("iteration: ");
+            Serial.println(i);
+            
+            Serial.print("in: ");
+            Serial.println(code[i]);
+
+            Serial.print("offset: ");
+            Serial.println(offset);
+
+            Serial.print("in: ");
+            Serial.print(((offset + i) % 128 ));
+            Serial.print("=");
+            Serial.println(code[(offset + i) % 128 ]);
+            
             bool ans = getBool(code[i]) & mask | getBool(code[i]) ^ !mask ^ !(getBool(code[(offset + i) % size ]));
             code[i] = ans ? '1' : '0';
+
+            Serial.print("Outut: ");
+            Serial.println(code[i]);
           }
+          Serial.print("Output: ");
           Serial.println(code);
-          /****************************************************************/
         }
         String connName = json_parsed["connName"];
         Serial.println(connName);
@@ -238,6 +256,6 @@ void loop() {
         saveCredentials();
       }
     }
-    ESP.deepSleep(100000);
   }
+  ESP.deepSleep(100000);
 }
