@@ -35,7 +35,6 @@ public class ClickServiceImple implements ClickService{
 		
 		//This segment of code will never fail
 		boolean [] generatedData = generator.getRandomNumber(128);
-		System.out.println(generatedData);
 		String encryptedData = Util.GetString(encryper.getEncryptedValue(generatedData));
 		
 		try {
@@ -44,7 +43,8 @@ public class ClickServiceImple implements ClickService{
 			device.setSecurityCode(encryptedData);
 			dDao.saveOrUpdate(device);
 			String mode = device.getOperationMode();
-			System.out.println("GeneratedData: " + generatedData);
+			System.out.println("GeneratedData: ");
+			display(generatedData);
 			return resolveResponseFor(generatedData, device, mode);
 		} catch (Exception e) {
 			e.printStackTrace();
