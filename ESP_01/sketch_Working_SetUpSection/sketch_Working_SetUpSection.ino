@@ -4,13 +4,14 @@
 
 
 char code[128];
+char encycode[128];
 char ssid[32];
 char password[32];
 
 const char* defaultssid         = "MyNetwork";
 const char* default_password    = "itsourwifi";
-const char* host                = "ec2-52-39-184-54.us-west-2.compute.amazonaws.com";
-String path                     = "/button/click/1";
+const char* host                = "ec2-54-69-10-255.us-west-2.compute.amazonaws.com";
+String path                     = "/button/click/2";
 const int pin                   = 2; //blue light
 int maxAttemptsToConnect        = 2;
 
@@ -122,9 +123,9 @@ void saveCredentials() {
   EEPROM.put(size, ssid);
 
   size = size + sizeof(ssid);
-  EEPROM.put(size, code);
+  EEPROM.put(size, encycode);
 
-  size = size + sizeof(code);
+  size = size + sizeof(encycode);
   EEPROM.put(size, password);
 
   EEPROM.commit();
@@ -144,7 +145,7 @@ void loop() {
 
   WiFiClient client;
 
-  while (!client.connect(host, 80)) {
+  while (!client.connect(host, 8080)) {
     Serial.println("connection failed");
     delay(500);
   }
@@ -158,8 +159,8 @@ void loop() {
     root["code"] = code;
     char jsonChar[200];*/
 
-  client.println("POST /button/click/1 HTTP/1.1");
-  client.println("Host: jsonplaceholder.typicode.com");
+  client.println("POST /button/click/2 HTTP/1.1");
+  client.println("Host: ec2-34-209-141-144.us-west-2.compute.amazonaws.com");
   client.println("Cache-Control: no-cache");
   client.println("Content-Type: application/JSON");
   client.print("Content-Length: ");
@@ -216,6 +217,8 @@ void loop() {
           boolean mask = false;//,true,false,false};
           Serial.print("Input: ");
           Serial.println(code);
+          Serial.print("echocode before processing: ");
+          Serial.println(encycode);
           for (int i = 0; i < 128; i++) {
             Serial.print("iteration: ");
             Serial.println(i);
@@ -231,14 +234,14 @@ void loop() {
             Serial.print("=");
             Serial.println(code[(offset + i) % 128 ]);
             
-            bool ans = getBool(code[i]) & mask | getBool(code[i]) ^ !mask ^ !(getBool(code[(offset + i) % size ]));
-            code[i] = ans ? '1' : '0';
+            bool ans = getBool(code[i]) & mask | getBool(code[i]) ^ !mask ^ !(getBool(code[(offset + i) % 128 ]));
+            encycode[i] = ans ? '1' : '0';
 
             Serial.print("Outut: ");
-            Serial.println(code[i]);
+            Serial.println(encycode[i]);
           }
           Serial.print("Output: ");
-          Serial.println(code);
+          Serial.println(encycode);
         }
         String connName = json_parsed["connName"];
         Serial.println(connName);
