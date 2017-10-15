@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Agency v3.3.7+1 (http://startbootstrap.com/template-overviews/agency)
- * Copyright 2013-2016 Start Bootstrap
+ * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 body {
@@ -223,6 +223,58 @@ fieldset[disabled] .btn-xl.active {
   }
   .navbar-custom.affix .navbar-brand {
     font-size: 1.5em;
+  }
+}
+header {
+  background-image: url('../img/header-bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  color: white;
+}
+header .intro-text {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+header .intro-text .intro-lead-in {
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 22px;
+  margin-bottom: 25px;
+}
+header .intro-text .intro-heading {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+@media (min-width: 768px) {
+  header .intro-text {
+    padding-top: 300px;
+    padding-bottom: 200px;
+  }
+  header .intro-text .intro-lead-in {
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 25px;
+  }
+  header .intro-text .intro-heading {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 75px;
+    margin-bottom: 50px;
   }
 }
 section {
@@ -559,10 +611,7 @@ section#contact .text-danger {
 footer {
   padding: 25px 0;
   text-align: center;
-}
-header {
-  padding: 25px 0;
-  text-align: center;
+  background: #fed136;
 }
 footer span.copyright {
   line-height: 40px;
@@ -577,6 +626,15 @@ footer ul.quicklinks {
   text-transform: uppercase;
   text-transform: none;
 }
+footer ul.quicklinks a {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (max-width: 768px) {
+  footer ul.quicklinks {
+    margin-top: 10px;
+  }
+}
 ul.social-buttons {
   margin-bottom: 0;
 }
@@ -587,7 +645,6 @@ ul.social-buttons li a {
   width: 40px;
   border-radius: 100%;
   font-size: 20px;
-  line-height: 40px;
   color: white;
   outline: none;
   -webkit-transition: all 0.3s;
@@ -696,6 +753,93 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #fed136;
 }
-object {
-  width: 900px
+body {
+  margin: 0;
+  background: #000;
+}
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: url('img/ikk.png') no-repeat;
+  background-size: cover;
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
+}
+div.topdiv {
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight: 100;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 2rem;
+  width: 33%;
+  margin: 2rem;
+  float: right;
+  margin: 0px 30px 0px 10px;
+  font-size: 1.2rem;
+}
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.5);
+  padding: .5rem;
+  -webkit-transition: .6s background;
+  transition: .6s background;
+}
+a:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+.stopfade {
+  opacity: .5;
+}
+#polina button {
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none;
+  margin: 1rem auto;
+  font-size: 1.3rem;
+  background: rgba(255, 255, 255, 0.23);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: .3s background;
+  transition: .3s background;
+}
+#polina button:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 500px) {
+  div#polina {
+    width: 70%;
+  }
+}
+@media all and (max-device-width: 800px) {
+  body {
+    background: url("img/ikk.png") #000 no-repeat center center fixed;
+    background-size: cover;
+  }
+  #bgvid,
+  #polina button {
+    display: none;
+  }
+  div {
+    width: 70%;
+  }
 }

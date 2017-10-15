@@ -43,7 +43,7 @@ a:hover { background: rgba(0,0,0,0.9); }
 }
 
 @media screen and (max-width: 500px) { 
-  div{width:70%;} 
+  div#polina{width:70%;} 
 }
 @media all and (max-device-width: 800px) {
   body { background: url("img/ikk.png") #000 no-repeat center center fixed; background-size: cover; }

@@ -589,6 +589,7 @@ section#contact {
 footer {
     padding: 25px 0;
     text-align: center;
+    background: #fed136;
     span.copyright {
         line-height: 40px;
         .heading-font;
@@ -599,6 +600,19 @@ footer {
         line-height: 40px;
         .heading-font;
         text-transform: none;
+
+        a{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
+
+@media(max-width:768px) {
+    footer {
+        ul.quicklinks {
+            margin-top: 10px;
+        }
     }
 }
 
@@ -614,7 +628,7 @@ ul.social-buttons {
             width: 40px;
             border-radius: 100%;
             font-size: 20px;
-            line-height: 40px;
+            // line-height: 40px;
             color: white;
             outline: none;
             -webkit-transition: all 0.3s;
@@ -735,4 +749,56 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: @theme-primary;
+}
+
+
+//from headerindex.jsp
+
+body { margin: 0; background: #000;}
+video { 
+position: fixed;
+top: 50%;
+left: 50%;
+min-width: 100%;  
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -100;
+-moz-transform: translateX(-50%) translateY(-50%);
+-ms-transform: translateX(-50%) translateY(-50%);
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
+background: url('img/ikk.png') no-repeat; background-size: cover;  -webkit-transition: 1s opacity; transition: 1s opacity; }
+div.topdiv { font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;   
+font-weight: 100; background: rgba(0,0,0,0.3); color: white; padding: 2rem; width: 33%; margin: 2rem; float: right; margin: 0px 30px 0px 10px; font-size: 1.2rem; }
+h1 { font-size: 3rem; text-transform: uppercase; margin-top: 0; letter-spacing: .3rem; }
+a { display: inline-block; color: #fff; text-decoration: none; background: rgba(0,0,0,0.5); 
+padding: .5rem; -webkit-transition: .6s background; transition: .6s background; }
+a:hover { background: rgba(0,0,0,0.9); }
+.stopfade { opacity: .5; }
+#polina button { 
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.23);
+  color: #fff;
+  border-radius: 3px; 
+  cursor: pointer;
+  -webkit-transition: .3s background;
+  transition: .3s background;
+}
+#polina button:hover { 
+   background: rgba(0,0,0,0.5);
+}
+
+@media screen and (max-width: 500px) { 
+  div#polina{width:70%;} 
+}
+@media all and (max-device-width: 800px) {
+  body { background: url("img/ikk.png") #000 no-repeat center center fixed; background-size: cover; }
+  #bgvid, #polina button { display: none; }
+  div{width:70%;} 
 }

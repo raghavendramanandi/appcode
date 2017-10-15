@@ -22,7 +22,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Theme CSS -->
-    <link href="css/agency.min.css" rel="stylesheet">
+    <link href="css/agency.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> 
     
@@ -89,7 +89,20 @@
     
     <section>
     	<div class="container">
-    		<jsp:include page="headerIndex.jsp" />
+    		<!-- <jsp:include page="headerIndex.jsp" /> -->
+            <video autoplay="autoplay" loop="" poster="img/ikk.png" id="bgvid" class="stopfade">
+                <source src="headerIndex/polina.webm" type="video/webm">
+                <source src="headerIndex/polina.mp4" type="video/mp4">
+            </video> 
+            <div id="polina" class="topdiv">
+                <h1>the ikk</h1>
+                <p>A new dimension in connectivity
+                </p>
+                <p>ikk is a button, Not just any button, It's a connected button. Just a push of ikk can do stuffs for you.</p>
+                <p>Often we come across situation where in we feel or even wish we had a button to do things for us, ikk is just such button.</p>
+                <p>Our open architecture makes it easy to integrate other application and systems to perform actions for you. This has been achieved with a combination of new age technology and distributed architecture. Our application and button work in tandem to provide a seamless experience of using ikk. ikk is simple and easy.</p>
+                <button>Pause</button>
+            </div>
     	</div>
     </section>
     
@@ -670,6 +683,44 @@
 
     <!-- Theme JavaScript -->
     <script src="js/agency.min.js"></script>
+
+    <script>
+    var video = document.getElementById("bgvid"),
+    pauseButton = document.querySelector("#polina button");
+
+    function vidFade() {
+      video.classList.add("stopfade");
+    }
+
+    video.addEventListener('ended', function()
+    {
+    // only functional if "loop" is removed 
+    video.pause();
+    vidFade();
+    }, false); 
+     
+    pauseButton.addEventListener("click", function() {
+      video.classList.toggle("stopfade");
+      if (video.paused) {
+        video.play();
+        pauseButton.innerHTML = "Pause";
+      } else {
+        video.pause();
+        pauseButton.innerHTML = "Paused";
+      }
+    }, false);
+
+    video.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    video.play();
+    })
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','http://google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-9896842-2', 'auto');
+      ga('send', 'pageview');
+    </script>
 
 </body>
 
