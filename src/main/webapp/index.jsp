@@ -65,9 +65,6 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team">Team</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -76,17 +73,6 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <!-- Header 
-    <header>
-        <div class="container">
-        <jsp:include page="headerIndex.jsp" />
-        </div>
-    </header>
-    -->
-    
-    
-    
     <section>
     	<div class="container">
     		<!-- <jsp:include page="headerIndex.jsp" /> -->
@@ -100,7 +86,7 @@
                 </p>
                 <p>ikk is a button, Not just any button, It's a connected button. Just a push of ikk can do stuffs for you.</p>
                 <p>Often we come across situation where in we feel or even wish we had a button to do things for us, ikk is just such button.</p>
-                <p>Our open architecture makes it easy to integrate other application and systems to perform actions for you. This has been achieved with a combination of new age technology and distributed architecture. Our application and button work in tandem to provide a seamless experience of using ikk. ikk is simple and easy.</p>
+                <p>ikk's architecture makes it easy to integrate other application and systems to perform actions on it. This has been achieved with a combination of new age technology and distributed architecture. Our software and hardware work in tandem to provide a seamless experience of using ikk. ikk is simple and easy.</p>
                 <button>Pause</button>
             </div>
     	</div>
@@ -122,7 +108,7 @@
                         <i class="fa fa-bicycle fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">ikk </br> <span style="font-family: 'Pacifico', cursive; font-size: 29px;">Alpha</span></h4>
-                    <p class="text-muted">Alpha is our simplest offering. It does all the things an ikk can do. Just pair it with your phone, You are ready.</p>
+                    <p class="text-muted">ikk Alpha is a blue-tooth ikk. It pairs with your smart-phone or other blue-tooth device. It is an entry level ikk, it can do all the things any ikk can do. It is truly an ikk Development of this ikk is still in progress</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -131,7 +117,7 @@
                         <i class="fa fa-motorcycle fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">ikk </br> <span style="font-size: 29px;"></>S</span></h4>
-                    <p class="text-muted">Super ikk is our best offering. It's independent, It's reliable and it's truly ikk. It's wifi based. Its flexible, You can use your ikk in home and office.</p>
+                    <p class="text-muted">ikk S is our best offering. It is a wifi ikk. It connects to your wifi network and doesn't need any other device for it to work. ikk S is ready for market</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -139,7 +125,7 @@
                         <i class="fa fa-car fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">ikk <br><span style="font-family: 'Lobster', cursive; font-size: 29px;">Aero</span></h4>
-                    <p class="text-muted">ikk Aero is the robust ikk. It uses GSM technology, It's one of the safest networks to work with. You can use your ikk even in the places where there is no internet. </p>
+                    <p class="text-muted">ikk Aero is the robust ikk. It uses GSM technology, It's one of the safest networks to work with. You can use your ikk even in the places where there is no Internet. Development of this ikk is still in progress</p>
                 </div>
             </div>
         </div>
@@ -151,7 +137,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Pricing</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Prices and schemes vary from time to time and place, <a class="page-scroll" href="#contact">Contact us</a> to get latest pricing.</h3>
                 </div>
             </div>
             <div class="row">
@@ -197,48 +183,6 @@
                         <p class="text-muted">Website Design</p>
                     </div>
                 </div>
-                <!--  <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/enterprise.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
@@ -294,19 +238,6 @@
                                 </div>
                             </div>
                         </li>
-                        <!--<li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4 class="subheading">Security</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Security is one of the challenging aspects of any distributed system. this is even more pronounced in an IoT ecosystem. To address this problem we have built a in house security system that allows for a secure usage if ikk. contact us to know more..</p>
-                                </div>
-                            </div>
-                        </li> -->
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <h4>Be Part
@@ -319,77 +250,13 @@
             </div>
         </div>
     </section>
-
-    <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Raghavendra</h4>
-                        <p class="text-muted">Founder</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Clients Aside -->
-    <!--  <aside class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </aside>
-    -->
-
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">We at ikk are always there to hear from you</h3>
+                    <h3 class="section-subheading text-muted">If you would like a demo or need any information, please use this message box.</h3>
                 </div>
             </div>
             <div class="row">
@@ -432,7 +299,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2016</span>
+                    <span class="copyright">Copyright &copy; ikk.cool 2017</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
