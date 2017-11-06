@@ -1,5 +1,6 @@
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="headerIndex/headerIndex.css" rel="stylesheet" type="text/css">
 <style>
 body { margin: 0; background: #000;}
