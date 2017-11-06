@@ -81,7 +81,7 @@
                 <source src="headerIndex/polina.mp4" type="video/mp4">
             </video> 
             <div id="polina" class="topdiv">
-                <h1>the ikk</h1>
+                <h1>the ikk -2</h1>
                 <p>A new dimension in connectivity
                 </p>
                 <p>ikk is a button, Not just any button, It's a connected button. Just a push of ikk can do stuffs for you.</p>
