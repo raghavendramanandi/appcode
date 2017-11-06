@@ -827,7 +827,7 @@ a:hover {
 }
 @media screen and (max-width: 500px) {
   div#polina {
-    width: 70%;
+    width: 100%;
   }
 }
 @media all and (max-device-width: 800px) {
@@ -838,8 +838,5 @@ a:hover {
   #bgvid,
   #polina button {
     display: none;
-  }
-  div {
-    width: 70%;
   }
 }
