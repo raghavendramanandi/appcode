@@ -48,7 +48,6 @@ a:hover { background: rgba(0,0,0,0.9); }
 @media all and (max-device-width: 800px) {
   body { background: url("img/ikk.png") #000 no-repeat center center fixed; background-size: cover; }
   #bgvid, #polina button { display: none; }
-  div{width:70%;} 
 }
 </style>
 <meta charset="utf-8">
