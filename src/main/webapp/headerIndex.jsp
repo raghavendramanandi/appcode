@@ -64,7 +64,7 @@ a:hover { background: rgba(0,0,0,0.9); }
 </p>
 <p>ikk is a button, Not just any button, It's a connected button. Just a push of ikk can do stuffs for you.</p>
 <p>Often we come across situation where in we feel or even wish we had a button to do things for us, ikk is just such button.</p>
-<p>ikk's architecture makes it easy to integrate other application and systems to perform actions on it. This has been achieved with a combination of new age technology and distributed architecture. Our software and hardware work in tandem to provide a seamless experience of using ikk. ikk is simple and easy.</p>
+<p>ikk's architecture makes it easy to integrate other application and systems to perform actions through it. This has been achieved with a combination of new age hardware and distributed software architecture. Our software and hardware work in tandem to provide a seamless experience of using ikk. ikk is simple and easy.</p>
 <button>Pause</button>
 </div>
 <script>

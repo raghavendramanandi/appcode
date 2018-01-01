@@ -76,18 +76,18 @@
     <section>
     	<div class="container">
     		<!-- <jsp:include page="headerIndex.jsp" /> -->
-            <video autoplay="autoplay" loop="" poster="img/ikk.png" id="bgvid" class="stopfade">
+            <video loop="" poster="img/ikk.png" id="bgvid" class="stopfade">
                 <source src="headerIndex/polina.webm" type="video/webm">
                 <source src="headerIndex/polina.mp4" type="video/mp4">
             </video> 
             <div id="polina" class="topdiv">
-                <h1>the ikk -2</h1>
+                <h1>the ikk</h1>
                 <p>A new dimension in connectivity
                 </p>
                 <p>ikk is a button, Not just any button, It's a connected button. Just a push of ikk can do stuffs for you.</p>
                 <p>Often we come across situation where in we feel or even wish we had a button to do things for us, ikk is just such button.</p>
-                <p>ikk's architecture makes it easy to integrate other application and systems to perform actions on it. This has been achieved with a combination of new age technology and distributed architecture. Our software and hardware work in tandem to provide a seamless experience of using ikk. ikk is simple and easy.</p>
-                <button>Pause</button>
+                <p>ikk's architecture makes it easy to integrate other application and systems to perform actions through it. This has been achieved with a combination of new age hardware and distributed architecture. Our software and hardware work in tandem to provide a seamless experience of using ikk. ikk is simple and easy.</p>
+                <button>Play video</button>
             </div>
     	</div>
     </section>
@@ -108,7 +108,7 @@
                         <i class="fa fa-bicycle fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">ikk </br> <span style="font-family: 'Pacifico', cursive; font-size: 29px;">Alpha</span></h4>
-                    <p class="text-muted">ikk Alpha is a blue-tooth ikk. It pairs with your smart-phone or other blue-tooth device. It is an entry level ikk, it can do all the things any ikk can do. It is truly an ikk Development of this ikk is still in progress</p>
+                    <p class="text-muted">ikk Alpha is a blue-tooth ikk. It pairs with your smart-phone or other blue-tooth device. It is an entry level ikk. Development of this ikk is still in progress</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -117,7 +117,7 @@
                         <i class="fa fa-motorcycle fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">ikk </br> <span style="font-size: 29px;"></>S</span></h4>
-                    <p class="text-muted">ikk S is our best offering. It is a wifi ikk. It connects to your wifi network and doesn't need any other device for it to work. ikk S is ready for market</p>
+                    <p class="text-muted">ikk S is our best offering. It is a WiFi ikk. It connects to your WiFi network and doesn't need any other device for it to work. ikk S is ready for market</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -125,7 +125,7 @@
                         <i class="fa fa-car fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">ikk <br><span style="font-family: 'Lobster', cursive; font-size: 29px;">Aero</span></h4>
-                    <p class="text-muted">ikk Aero is the robust ikk. It uses GSM technology, It's one of the safest networks to work with. You can use your ikk even in the places where there is no Internet. Development of this ikk is still in progress</p>
+                    <p class="text-muted">ikk Aero is the robust ikk. It uses GSM technology, it's one of the safest networks to work with. You can use this ikk even in the places where there is no Internet. Development of this ikk is still in progress</p>
                 </div>
             </div>
         </div>
@@ -142,7 +142,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#contact" class="page-scroll">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -151,12 +151,12 @@
                         <img src="img/portfolio/basic.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
+                        <!-- <h4>Round Icons</h4>
+                        <p class="text-muted">Graphic Design</p> -->
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                    <a href="#contact" class="page-scroll">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -165,12 +165,12 @@
                         <img src="img/portfolio/pro.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
+                        <!-- <h4>Startup Framework</h4>
+                        <p class="text-muted">Website Design</p> -->
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                    <a href="#contact" class="page-scroll">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -179,8 +179,8 @@
                         <img src="img/portfolio/enterprise.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
+                       <!--  <h4>Treehouse</h4>
+                        <p class="text-muted">Website Design</p> -->
                     </div>
                 </div>
             </div>
@@ -193,7 +193,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
                 </div>
             </div>
             <div class="row">
@@ -208,7 +208,7 @@
                                     <h4 class="subheading">Distributed Architecture</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Our distributed architecture enables you to connect your existing system to us. So that you can use full potential of ikk in your business. Configureing your existing system with us will not take more than 5 min!</p>
+                                    <p class="text-muted">Our system is designed to support distributed communication, enabling you to connect your existing systems to us. So that you can use full potential of ikk in your business. Configuring your existing system with us will take less than 5 min!</p>
                                 </div>
                             </div>
                         </li>
@@ -221,7 +221,8 @@
                                     <h4 class="subheading">Trigger Actions</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">System is designed for a modular platform. this enables attaching any module easy and facilitates seamless integration. Every ikk can be configured to a default set of actions. These actions are associate to each of the modules. These trigger an SMS, IVR, Recharge, etc..</p>
+                                    <p class="text-muted">Action is a key part of ikk. ikk can be configured with several default Actions which are Plug and Play. You can also define a custom Action</p>
+                                    <p class="text-muted">Defining custom Actions should be simple, ikk system is designed keeping this in mind. Our Modular platform makes it easy to define and integrate custom modules and provides a seamless experience</p>
                                 </div>
                             </div>
                         </li>
@@ -234,7 +235,7 @@
                                     <h4 class="subheading">Security</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Security is one of the challenging aspects of any distributed system. this is even more pronounced in an IoT ecosystem. To address this problem we have built a in house security system that allows for a secure usage if ikk. contact us to know more..</p>
+                                    <p class="text-muted">Security is one of the challenging and key aspects of any system. This is even more pronounced in an IoT ecosystem. To address this problem we have built an in house security system that allows for a secure operation of ikk. contact us to know more..</p>
                                 </div>
                             </div>
                         </li>
@@ -256,7 +257,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">If you would like a demo or need any information, please use this message box.</h3>
+                    <h3 class="section-subheading text-muted">If you would like a demo, make a purchase or need any information, please use this message box.</h3>
                 </div>
             </div>
             <div class="row">
